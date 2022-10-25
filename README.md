@@ -27,7 +27,7 @@ Entrega
 
 
 ## Como executar o projeto
-Para instalar o Experiencein, siga estas etapas:
+Para instalar e executar o Painel de Senhas, siga estas etapas:
 
 Linux:
 ```
