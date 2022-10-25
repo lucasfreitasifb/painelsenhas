@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html lang="pt-br"> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>Painel de Senhas - Libertas Quæ Sera Tamen</title> 
+</head> 
+<body> 
+    <h1> - Libertas Quæ Sera Tamen -</h1>
+    <h3>Bem-vindo ao Painel de Senhas</h3>
+</body> 
+</html>
+
+        {% if senhas %}
+        <h2>Na fila</h2>
+            <ul>
+                {% for senha in senhas %}
+                    {% if senha.status_senha_id_status_senha.nome == 'Na Fila' and senha.tipo_id_tipo.nome == 'Não Preferencial'%}
+                    <li>
+                        Chamar senha  <a href="{% url 'exibir' senha.id_senha %}">{{ senha.senha }}</a> - {{ senha.status_senha_id_status_senha.nome }}
+                    </li>
+                    {% endif %}
+
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhuma Senha Encontrada</p>
+        {% endif %}
+        {% if senhas %}
+        <h2>Preferencial</h2>
+            <ul>
+                {% for senha in senhas %}
+                    {% if senha.status_senha_id_status_senha.nome == 'Na Fila' and senha.tipo_id_tipo.nome == 'Preferencial' %}
+                    <li>
+                        Chamar senha  <a href="{% url 'exibir' senha.id_senha %}">{{ senha.senha }}</a> - {{ senha.status_senha_id_status_senha.nome }}
+                    </li>
+                    {% endif %}
+
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhuma Senha Encontrada</p>
+        {% endif %}
+        {% if senhas %}
+        <h2>Últimas Chamadas</h2>
+            <ul>
+                {% for senha in senhas %}
+                    {% if senha.status_senha_id_status_senha.nome == 'Em Atendimento' %}
+                    <li>
+                        Chamar senha  <a href="{% url 'exibir' senha.id_senha %}">{{ senha.senha }}</a> - {{ senha.status_senha_id_status_senha.nome }}
+                    </li>
+                    {% endif %}
+
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Nenhuma Senha Encontrada</p>
+        {% endif %}
+        
+    </body>
+</html>
