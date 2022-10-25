@@ -31,12 +31,9 @@ Para instalar o Experiencein, siga estas etapas:
 
 Linux:
 ```
-https://github.com/lucasfreitasifb/painelsenhas.git```
+https://github.com/lucasfreitasifb/painelsenhas.git
 
-```
 cd paineldesenha
-```
 
-```
 python manage.py runserver
 ```
